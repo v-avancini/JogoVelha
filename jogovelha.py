@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- codificacao: utf-8 -*-
 """
-Created on Sun Sep 23 15:33:59 2018
 @author: talles medeiros, decsi-ufop
+@author: vitor avancini, decsi-ufop
 """
 
 """
-Este código servirá de exemplo para o aprendizado do algoritmo MINIMAX
-na disciplina de Inteligência Artificial - CSI457
-Semestre: 2018/2
+Este código será utilizado para a realização do trabalho da
+implementação de um jogo da velha 4x4 que apresenta função de avaliação
+e poda alfa-beta.
 """
 
 #!/usr/bin/env python3
@@ -19,7 +19,7 @@ import time
 from os import system
 
 """
-Um versão simples do algoritmo MINIMAX para o Jogo da Velha.
+Uma versão simples do algoritmo MINIMAX para o Jogo da Velha.
 """
 
 # Representando a variável que identifica cada jogador
