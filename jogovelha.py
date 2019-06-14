@@ -73,7 +73,7 @@ def vitoria(estado, jogador):
         [estado[0][1], estado[1][1], estado[2][1], estado[3][1]], # toda coluna 2
         [estado[0][2], estado[1][2], estado[2][2], estado[3][2]], # toda coluna 3
         [estado[0][0], estado[1][1], estado[2][2], estado[3][3]], # diagonal principal
-        [estado[2][0], estado[1][1], estado[0][2], estado[][]], # diagonal secundária
+        [estado[3][0], estado[2][1], estado[1][2], estado[0][3]], # diagonal secundária
     ]
     # Se um, dentre todos os alinhamentos pertence um mesmo jogador,
     # então o jogador vence!
@@ -212,9 +212,9 @@ def IA_vez(comp_escolha, humano_escolha):
     print('Vez do Computador [{}]'.format(comp_escolha))
     exibe_tabuleiro(tabuleiro, comp_escolha, humano_escolha)
 
-    if profundidade == 9:
-        x = choice([0, 1, 2])
-        y = choice([0, 1, 2])
+    if profundidade == 16:
+        x = choice([0, 1, 2, 3])
+        y = choice([0, 1, 2, 3])
     else:
         move = minimax(tabuleiro, profundidade, COMP)
         x, y = move[0], move[1]
@@ -237,18 +237,19 @@ def HUMANO_vez(comp_escolha, humano_escolha):
     # Dicionário de movimentos válidos
     movimento = -1
     movimentos = {
-        1: [0, 0], 2: [0, 1], 3: [0, 2],
-        4: [1, 0], 5: [1, 1], 6: [1, 2],
-        7: [2, 0], 8: [2, 1], 9: [2, 2],
+        1: [0, 0], 2: [0, 1], 3: [0, 2], 4: [0, 3],
+        5: [1, 0], 6: [1, 1], 7: [1, 2], 8: [1, 3],
+        9: [2, 0], 10: [2, 1], 11: [2, 2], 12: [2, 3],
+        13: [3, 0], 14 [3, 1], 15: [3, 2], 14: [3, 3],
     }
 
     limpa_console()
     print('Vez do HUMANO [{}]'.format(humano_escolha))
     exibe_tabuleiro(tabuleiro, comp_escolha, humano_escolha)
 
-    while (movimento < 1 or movimento > 9):
+    while (movimento < 1 or movimento > 16):
         try:
-            movimento = int(input('Use numero (1..9): '))
+            movimento = int(input('Use numero (1..16): '))
             coord = movimentos[movimento]
             tenta_movimento = exec_movimento(coord[0], coord[1], HUMANO)
 
